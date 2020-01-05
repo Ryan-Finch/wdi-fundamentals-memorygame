@@ -23,18 +23,21 @@ const cards = [
 	}
 ];
 let cardsInPlay = [];
-//Creating matchCounter variable
+const myTable = document.getElementById('myTable');
+let matchWin = 1;
+let matchLoss = 1;
 
 function checkForMatch(){
+
 	if(cardsInPlay.length === 2){
 		if(cardsInPlay[0] === cardsInPlay[1]){
-			
+			myTable.rows[1].cells[0].innerHTML = matchWin++;
 			console.log("You found a match!");
-			
 		}else{
 			
 			console.log("Sorry, try again.");
-			
+			myTable.rows[1].cells[1].innerHTML = matchLoss++;
+			reset();
 		}
 
 	};
