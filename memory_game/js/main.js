@@ -24,19 +24,19 @@ const cards = [
 ];
 let cardsInPlay = [];
 const myTable = document.getElementById('myTable');
-let matchWin = 1;
-let matchLoss = 1;
+let matchWin = 0;
+let matchLoss = 0;
 
 function checkForMatch(){
 
 	if(cardsInPlay.length === 2){
 		if(cardsInPlay[0] === cardsInPlay[1]){
-			myTable.rows[1].cells[0].innerHTML = matchWin++;
+			myTable.rows[1].cells[0].innerHTML = matchWin += 1;
 			console.log("You found a match!");
 		}else{
 			
 			console.log("Sorry, try again.");
-			myTable.rows[1].cells[1].innerHTML = matchLoss++;
+			myTable.rows[1].cells[1].innerHTML = matchLoss += 1;
 			reset();
 		}
 
